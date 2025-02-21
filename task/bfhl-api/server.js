@@ -2,17 +2,17 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-// Middleware
+
 app.use(express.json());
 app.use(cors());
 
-// Constants
+
 const USER_ID = "john_doe_17091999";
 const EMAIL = "john@xyz.com";
 const ROLL_NUMBER = "ABCD123";
 
-// Utility functions
-const isAlphabet = (str) => /^[A-Za-z]+$/.test(str);  // Fixed this function
+
+const isAlphabet = (str) => /^[A-Za-z]+$/.test(str);  
 const isNumber = (str) => /^\d+$/.test(str);
 
 const findHighestAlphabet = (alphabets) => {
@@ -23,12 +23,12 @@ const findHighestAlphabet = (alphabets) => {
     return [highest];
 };
 
-// GET endpoint
+
 app.get('/bfhl', (req, res) => {
     return res.status(200).json({ operation_code: 1 });
 });
 
-// POST endpoint
+
 app.post('/bfhl', (req, res) => {
     try {
         if (!req.body.data || !Array.isArray(req.body.data)) {
