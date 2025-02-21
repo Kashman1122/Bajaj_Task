@@ -30,7 +30,7 @@ const App = () => {
       }
 
       setIsLoading(true);
-      const response = await fetch('http://localhost:3000/bfhl', {
+      const response = await fetch('https://bajaj-backend-1-g07m.onrender.com/bfhl/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
